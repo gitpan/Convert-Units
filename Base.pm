@@ -8,7 +8,7 @@ use vars qw($VERSION);
 
 use Carp;
 
-$VERSION = "0.42";
+$VERSION = "0.43";
 
 sub initialize {
     my $self = shift;
@@ -126,11 +126,12 @@ sub convert_units
     my ($multiple, $unit_to) 	= $self->parse_unit (shift, 1);
    
     unless (defined($unit_to)) {
-        $unit_to 	= $default_unit;
+        $unit_to = $self->{default};
     }
 
-    my $M, $A;
+    my ($M, $A);
     my $U = ${$self->{conversions}}{$unit};
+
     if (ref($U) eq ARRAY) {
         ($M, $A) = @{$U};
     } else {
@@ -159,11 +160,11 @@ sub parse_string
     my $str = lc(shift);
     my $unit_to = lc(shift);
 
-    my $sum = 0, $unit, $el = "1";
+    my $sum = 0, $el = "1";
 
     my @units = (split /,|\s+/, $str);
 
-    foreach $unit (@units) {
+    foreach my $unit (@units) {
 
         $el = $unit, if ($unit =~ m/^\d/);
         $el .= " ".$unit, if (($unit =~ m/^\D/) and ($unit !~ m/^(and)$/));
@@ -321,7 +322,7 @@ Robert Rothenberg <wlkngowl@unix.asb.com>
 
 =head1 LICENSE
 
-Copyright (c) 1999 Robert Rothenberg. All rights reserved.
+Copyright (c) 1999-2000 Robert Rothenberg. All rights reserved.
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
