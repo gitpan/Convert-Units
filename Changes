@@ -3,6 +3,9 @@ Revision history for Perl extension Convert::Units package.
 Note that very important changes which affect compatability with previous
 versions are marked with an asterisk ('*').
 
+0.42  Wed Sep 22 23:18:56 1999
+      - Fixed bug in Makefile.pl - install was to wrong place
+
 0.41  Tue Sep 21 16:44:06 1999
       * renamed module to Convert::Units
       - updated README to current version (oops)

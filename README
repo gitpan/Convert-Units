@@ -3,6 +3,11 @@ NAME
     Convert::Units::Base - base object for performing unit
     conversions
 
+CHANGES SINCE LAST RELEASE
+
+    0.42  Wed Sep 22 23:18:56 1999
+          - Fixed bug in Makefile.pl - install was to wrong place
+
 DESCRIPTION
 
     The Units package is a collection of modules for parsing strings
