@@ -1,0 +1,12 @@
+Revision history for Perl extension Convert::Units package.
+
+Note that very important changes which affect compatability with previous
+versions are marked with an asterisk ('*').
+
+0.41  Tue Sep 21 16:44:06 1999
+      * renamed module to Convert::Units
+      - updated README to current version (oops)
+
+0.40  Sun Sep 12 18:10:03 1999
+      - added ability to use A(x+B) conversions as well as Ax to Units::Base
+      - added Units::Temperature module to demo A(x+B) conversions
